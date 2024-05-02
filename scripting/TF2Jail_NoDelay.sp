@@ -87,12 +87,10 @@ public void TF2Jail_OnWardenRemoved(int iClient)
 
 Action OnWardenLockTimer(Handle hTimer)
 {
-	int iWardenLockTimer = GetConVarInt(cvWardenLockTimer);
+	int iWardenLockCommandTimer = GetConVarInt(cvWardenLockCommandTimer);
 
-	if (iWardenLockTimer > 0)
+	if (iWardenLockCommandTimer > 0)
 	{
-		int iWardenLockCommandTimer = GetConVarInt(cvWardenLockCommandTimer);
-
 		if (iWardenLockCommandTimer == 1)
 			CPrintToChatAll("%t %sWarden has been locked, preventing delaying in 1 second.", "plugin tag", strPluginColor);
 
