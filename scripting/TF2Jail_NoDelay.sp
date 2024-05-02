@@ -16,7 +16,7 @@ public Plugin myinfo =
 	name = "[TF2Jail] No Delay",
 	author = "Berke",
 	description = "Prevent the delaying of the round.",
-	version = "1.0.0"
+	version = "1.0.1"
 }
 
 public void OnPluginStart()
@@ -89,11 +89,11 @@ Action OnWardenLockTimer(Handle hTimer)
 {
 	int iWardenLockTimer = GetConVarInt(cvWardenLockTimer);
 
-	if (iWardenLockTimer)
+	if (iWardenLockTimer > 0)
 	{
 		int iWardenLockCommandTimer = GetConVarInt(cvWardenLockCommandTimer);
 
-		if (iWardenLockTimer == 1)
+		if (iWardenLockCommandTimer == 1)
 			CPrintToChatAll("%t %sWarden has been locked, preventing delaying in 1 second.", "plugin tag", strPluginColor);
 
 		else
